@@ -3,21 +3,32 @@ namespace Domain.CalculationSalary
 {
     public class CalculateSalary
     {
-        public static double Calculate(Employee employee)
+        public double Calculate(Employee employee)
         {
             var salary = employee.Salary;
             if (employee.Role == Role.Developer)
-                if (salary > 3000)
-                    salary = salary * .8;
-                else
-                    salary = salary * .9;
+                return TenOrTwentyPercentDiscount(employee);
             if (employee.Role == Role.Dba)
-                if (salary > 2500)
-                    salary = salary * .75;
-                else
-                    salary = salary * .85;
+                return FifteenOrTwentyPercentdiscount(employee);
 
             return salary;
         }
+
+        private double FifteenOrTwentyPercentdiscount(Employee employee)
+        {
+            if (employee.Salary > 2500)
+                return employee.Salary * .85;
+
+            return employee.Salary * .75;
+        }
+
+        private double TenOrTwentyPercentDiscount(Employee employee)
+        {
+            if (employee.Salary > 3000)
+                return employee.Salary * .8;
+
+            return employee.Salary * .9;
+        }
+
     }
 }

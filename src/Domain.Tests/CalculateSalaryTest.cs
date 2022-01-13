@@ -9,7 +9,8 @@ namespace Domain.Tests
         public void DeveloperMustHave20Discount()
         {
             Employee employee = new Employee("Joey",4500,Role.Developer);
-            var resultSalary = CalculateSalary.Calculate(employee);
+            var calculateSalary = new CalculateSalary();
+            var resultSalary = calculateSalary.Calculate(employee);
 
             Assert.Equal(resultSalary,employee.Salary * .8);
         }
@@ -18,7 +19,8 @@ namespace Domain.Tests
         public void DeveloperMustHave10Discount()
         {
             Employee employee = new Employee("Joey", 2510, Role.Developer);
-            var resultSalary = CalculateSalary.Calculate(employee);
+            var calculateSalary = new CalculateSalary();
+            var resultSalary = calculateSalary.Calculate(employee);
 
             Assert.Equal(resultSalary, employee.Salary * .9);
         }
@@ -26,19 +28,21 @@ namespace Domain.Tests
         [Fact]
         public void DBAAndTesterMustHave25Discount()
         {
-            Employee employee = new Employee("Joey Montana DBA", 3500, Role.Dba);
-            var resultSalary = CalculateSalary.Calculate(employee);
+            Employee employee = new Employee("Joey Montana DBA - 3500", 3400, Role.Dba);
+            var calculateSalary = new CalculateSalary();
+            var resultSalary = calculateSalary.Calculate(employee);
 
-            Assert.Equal(resultSalary, employee.Salary * .75);
+            Assert.Equal(resultSalary, employee.Salary * .85);
         }
 
         [Fact]
         public void DBAAndTesterMustHave15Discount()
         {
-            Employee employee = new Employee("Joey Montana DBA", 1500, Role.Dba);
-            var resultSalary = CalculateSalary.Calculate(employee);
+            Employee employee = new Employee("Joey Montana DBA - 1500", 1500, Role.Dba);
+            var calculateSalary = new CalculateSalary();
+            var resultSalary = calculateSalary.Calculate(employee);
 
-            Assert.Equal(resultSalary, employee.Salary * .85);
+            Assert.Equal(resultSalary, employee.Salary * .75);
         }
     }
 }
