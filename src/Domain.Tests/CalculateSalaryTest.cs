@@ -26,7 +26,7 @@ namespace Domain.Tests
         }
 
         [Fact]
-        public void DBAAndTesterMustHave25Discount()
+        public void DBAAndTesterMustHave15Discount()
         {
             Employee employee = new Employee("Joey Montana DBA - 3500", 3400, Role.Dba);
             var calculateSalary = new CalculateSalary();
@@ -36,7 +36,7 @@ namespace Domain.Tests
         }
 
         [Fact]
-        public void DBAAndTesterMustHave15Discount()
+        public void DBAAndTesterMustHave25Discount()
         {
             Employee employee = new Employee("Joey Montana DBA - 1500", 1500, Role.Dba);
             var calculateSalary = new CalculateSalary();
