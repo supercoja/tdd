@@ -19,13 +19,4 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Demo\Demo.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Remove="01-Basic\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="01-Basic\" />
-  </ItemGroup>
 </Project>
